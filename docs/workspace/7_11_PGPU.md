@@ -21,3 +21,4 @@ ECC校验位会在DRAM上进行校验，有消耗
 
 数据分布不均匀，CPU用driver，GPU用hardware control
 
+现在再试一次
