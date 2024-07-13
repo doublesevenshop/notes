@@ -6,4 +6,10 @@
 
 
 * [Rust系列](3_RUST/README.md)
+
+
+
+
+* [Chisel系列](4_Chisel/README.md)
+
     
