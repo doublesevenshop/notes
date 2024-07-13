@@ -7,6 +7,7 @@ import subprocess
 
 def git_push():
     path = os.path.abspath(os.path.dirname(__file__))
+    print(path)
     os.chdir(path)
     os.system('git add .')
     os.system('git commit -m "add"')
