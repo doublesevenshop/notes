@@ -10,7 +10,8 @@ def git_push():
     print(path)
     os.chdir(path)
     os.system('git add .')
-    os.system('git commit -m "add"')
+    # os.system('git commit -m "add"')
+    os.system('git commit -m "%s"' % sys.argv[1])
     os.system('git push -u origin main')
     print('push success')
 
