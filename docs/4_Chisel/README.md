@@ -7,3 +7,9 @@
 下边我们开始吧，始吧，吧~
 
 
+Chisel是伯克利在发明RISC-V的时候顺带产生的一个硬件描述语言， 它是Scala嵌入式语言的子集。
+
+![alt text](image/1.png)
+
+可以将设计硬件转换为Verilog等低层次HDL描述
+
