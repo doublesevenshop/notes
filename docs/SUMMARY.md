@@ -11,5 +11,6 @@
 
 
 * [Chisel系列](4_Chisel/README.md)
-
+    *[Chisel环境安装](4_Chisel/1.md)
+    *[Chisel工具简介](4_Chisel/2.md)
     
