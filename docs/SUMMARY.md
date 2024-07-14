@@ -8,6 +8,10 @@
 * [RISC-V相关资料](2_ziliao/README.md)
 
 * [Rust系列](3_RUST/README.md)
+    * [Rust环境配置](3_RUST/1.md)
+    * [Rust基础语法](3_RUST/2.md)
+    * [Rust所有权特性](3_RUST/3.md)
+    * [Rust引用](3_RUST/4.md)
 
 
 * [Chisel系列](4_Chisel/README.md)
