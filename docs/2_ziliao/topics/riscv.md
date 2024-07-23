@@ -10,4 +10,4 @@
 | 文档     | RISC-V官方最新白皮书               | [RISC-V官方最新白皮书](https://github.com/riscv/riscv-isa-manual/releases/tag/riscv-isa-release-568e50a-2024-07-12) | 最新的RISC-V指令集白皮书 |
 | 视频     | RISC-V Summit North America 2023   | [RISC-V Summit North America 2023](https://www.youtube.com/playlist?list=PL85jopFZCnbMfMRR25ENcRkhhAUGwP5C5) | RISC-V顶级会议视频集     |
 | 代码仓库 | XiangShan's Github                 | [XiangShan's Github](https://github.com/OpenXiangShan/XiangShan)                       | 开源高性能RISC-V处理器   |
-
+| RISC-V的GPU|RISC-V's GPU | [RISC-V's GPU](https://www.eet-china.com/mp/a304256.html) | |
