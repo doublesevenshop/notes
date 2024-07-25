@@ -1,8 +1,37 @@
 # Compile and Link
+**It's about xxxx words, if there are any errors or problems, email me! 1416642324@bupt.edu.cn**
 
-## 1. GCC
+> Hello everyone, have a nice day! 
+> Let's study together. 
 
-## 2. ELF
+## 1. GCC & GDB
+**GCC (GNU Compiler Collection)** is a suite of compilers developed by GNU under the GPL license. It supports front-ends in C/C++/Objective-C, Ada, and Go languages, and has been ported to a variety of computer architectures, such as X86, ARM, RISC-V, and so on.
+
+Now, let's look at the gcc version of the system first！
+
+```bash
+riscv@riscv-virtual-machine:~$ gcc --version
+gcc (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0
+Copyright (C) 2021 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+```
+
+## 2. ELF & Bin
+
+
+## 3. Make
+
+
+## 4. Cross Compile
+
+
+## 5. QEMU
+
+
+
+
 
 ## GCC
 ### GCC简介

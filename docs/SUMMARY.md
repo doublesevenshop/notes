@@ -2,7 +2,7 @@
 
 * [RISC系列](1_RISC-V/README.md)
     * [RISC-V ISA](1_RISC-V/01_ISA.md)
-    * [编译与链接](1_RISC-V/2.md)
+    * [Compile & Link](1_RISC-V/02_Compile.md)
     * [嵌入式扫盲](1_RISC-V/3.md)
 
 * [RISC-V相关资料](2_ziliao/README.md)
