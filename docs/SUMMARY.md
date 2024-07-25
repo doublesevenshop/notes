@@ -1,7 +1,7 @@
 # 摘要
 
 * [RISC系列](1_RISC-V/README.md)
-    * [RISC-V指令集架构](1_RISC-V/1.md)
+    * [RISC-V ISA](1_RISC-V/01_ISA.md)
     * [编译与链接](1_RISC-V/2.md)
     * [嵌入式扫盲](1_RISC-V/3.md)
 
