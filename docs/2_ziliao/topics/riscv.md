@@ -22,3 +22,44 @@ Counterpoint 预测
 ![alt text](image-1.png)
 
 ![alt text](image-2.png)
+
+
+![alt text](image-3.png)
+
+![alt text](image-4.png)
+
+![alt text](image-5.png)
+
+![alt text](image-6.png)
+
+![alt text](image-7.png)
+
+![alt text](image-8.png)
+
+
+![alt text](image-9.png)
+
+![alt text](image-10.png)
+
+
+![alt text](image-11.png)
+
+
+![alt text](image-12.png)
+
+
+![alt text](image-13.png)
+
+
+乐鑫esp32
+
+David Patterson 发明的RISC-V
+
+免费 ？开放！
+
+操作系统也模块化，根据RISC-V的模块来进行处理
+
+
+影响相容性？risc-v适合用在专用领域，并不是为了取代X86和arm，为了自己家的服务。
+
+有效运行neural engine、GPU、FPGA
