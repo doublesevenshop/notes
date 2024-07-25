@@ -216,3 +216,8 @@ Virtual Memory is managed using page tables, which map virtual addresses to phys
 
 Physical memory protection allows M-mode to specify memory addresses that can be accessed by U-mode, supports **RWX privileges as well as Lock**.
 
+
+
+## Appendix
+1. [The Official RISC-V White Paper](https://github.com/riscv/riscv-isa-manual/releases/tag/riscv-isa-release-568e50a-2024-07-12)
+2. [RISC-V's International Website](https://riscv.org/)
