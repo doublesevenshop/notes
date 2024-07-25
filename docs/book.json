@@ -1,0 +1,9 @@
+{
+    "gitbook" : "2.0.0",
+    "title": "My First Book",
+    "links" : {
+        "sidebar" : {
+            "Home" : "https://buptxyw.gitbook.io/notes"
+        }
+    }
+}
