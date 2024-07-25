@@ -71,6 +71,8 @@ GCC is the front-end program for compilation, it is achieved by calling other pr
 When compiling it first calls the `preprocessor program (cpp)` to process the input source program; then calls `cc1` to compile the preprocessed program into assembly code; and finally compiles the assembly code into target code by `as`.
 
 
+### 1.2. GCC Usage 
+
 Command format is as follows:
 ```bash
 gcc [options] file......
@@ -82,18 +84,27 @@ such as:
 gcc -g -c -o hello.o hello.c
 ```
 
-### 1.2. GCC Usage 
 There are some common options when using gcc
 | Option | Implication | Example |
 | --- | --- | --- |
 | `-E` | Preprocess the specified source file without compiling it and generate a .i file | gcc -E hello.c| 
-| -S | Compile the specified source file, but do not assemble it, and generate a .s file | gcc -S hello.c|
-| -c | Compile and assemble but do not link, generate .o files| gcc -c test1.c test2.c test3.c |
-| -o file| Save the output content in the file file| gcc main.c func.c -o ans.out|
-| -I dir| Specify the search directory for include files| gcc hello.c -I ./include/ |
-| -g | Generate debugging information, the program can be debugged by a debugger| gcc -g hello.c | 
-| -v | Print out the commands executed during the compilation process | gcc -v hello.c  | 
+| `-S` | Compile the specified source file, but do not assemble it, and generate a .s file | gcc -S hello.c|
+| `-c` | Compile and assemble but do not link, generate .o files| gcc -c test1.c test2.c test3.c |
+| `-o file`| Save the output content in the file file| gcc main.c func.c -o ans.out|
+| `-I dir`| Specify the search directory for include files| gcc hello.c -I ./include/ |
+| `-g` | Generate debugging information, the program can be debugged by a debugger| gcc -g hello.c | 
+| `-v` | Print out the commands executed during the compilation process | gcc -v hello.c  | 
 
+In addition to these, there are many options related to warnings:
+| Options | Meaning |
+| --- | --- |
+| `-w` | Turn off all warnings |
+| `-Wall` | Turn on all warnings |
+| `-Wimplicit` | If there is an implicit declaration, display a warning message|
+| `-Wno-implicit` | Do not show warnings for implicit declarations | 
+
+
+### 1.3. GDB
 
 
 
