@@ -5,6 +5,8 @@
 > Let's study together. 
 
 ## 1. GCC & GDB
+
+### 1.1. GCC
 **GCC (GNU Compiler Collection)** is a suite of compilers developed by GNU under the GPL license. It supports front-ends in C/C++/Objective-C, Ada, and Go languages, and has been ported to a variety of computer architectures, such as X86, ARM, RISC-V, and so on.
 
 Now, let's look at the gcc version of the system first！
@@ -80,6 +82,17 @@ such as:
 gcc -g -c -o hello.o hello.c
 ```
 
+### 1.2. GCC Usage 
+There are some common options when using gcc
+| Option | Implication | Example |
+| --- | --- | --- |
+| `-E` | Preprocess the specified source file without compiling it and generate a .i file | gcc -E hello.c| 
+| -S | Compile the specified source file, but do not assemble it, and generate a .s file | gcc -S hello.c|
+| -c | Compile and assemble but do not link, generate .o files| gcc -c test1.c test2.c test3.c |
+| -o file| Save the output content in the file file| gcc main.c func.c -o ans.out|
+| -I dir| Specify the search directory for include files| gcc hello.c -I ./include/ |
+| -g | Generate debugging information, the program can be debugged by a debugger| gcc -g hello.c | 
+| -v | Print out the commands executed during the compilation process | gcc -v hello.c  | 
 
 
 
