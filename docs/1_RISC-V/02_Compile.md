@@ -11,12 +11,65 @@ Now, let's look at the gcc version of the system first！
 
 ```bash
 riscv@riscv-virtual-machine:~$ gcc --version
+
 gcc (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0
 Copyright (C) 2021 Free Software Foundation, Inc.
 This is free software; see the source for copying conditions.  There is NO
 warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
-
 ```
+Before we happily use gcc, let's write a Hello world!
+```c
+#include <stdio.h>
+
+int main() {
+    printf("Hello world!\n");
+
+    return 0;
+}
+```
+
+This is a very, very simple code, we want to display Hello world on bash, so how do we use gcc?
+
+Let me guess, maybe you want to use these command directly
+```bash
+gcc hello.c
+./a.out
+
+Hello world!
+```
+Woooo! The process is so easy that people think compiling events is a simple matter. Is this really the case? Let's take a closer look at how the C compilation process really works.
+
+In fact, GCC has performed four steps：
+1. Preprocessing
+2. Compilation
+3. Assemble
+4. Linking
+
+<p align="center">
+  <img src="./image/image1_1.png" alt="alt text" />
+</p>
+
+| Tools | Function |
+| --- | --- |
+| GCC |  |
+|  |  |
+|  |  |
+|  |  |
+|  |  |
+
+
+### GCC的命令格式
+GCC 常用的选项有-E、-c、-S、-o、-g、-v等等
+- -E，用来做预处理
+- -c，只编译不链接，生成目标文件"-o"
+- -S, 生成汇编代码
+- -o file，把输出文件指定到文件名中
+- -g，在输出文件中加入支持调试的信息
+- -v，显示详细的命令执行过程信息
+```bash
+gcc [options] [filenames]
+```
+
 
 ## 2. ELF & Bin
 
@@ -33,23 +86,10 @@ warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 
 
 
-## GCC
-### GCC简介
-GCC（GNU Compiler Collection）
-是由GNU开发的，遵循GPL许可证发型的编译器套件，支持C/C++/Objective-C、Ada和Go语言等多种语言前端，已经被移植到多种计算机体系架构上，例如X86、ARM、RISC-V等。
 
 
-### GCC的命令格式
-GCC 常用的选项有-E、-c、-S、-o、-g、-v等等
-- -E，用来做预处理
-- -c，只编译不链接，生成目标文件"-o"
-- -S, 生成汇编代码
-- -o file，把输出文件指定到文件名中
-- -g，在输出文件中加入支持调试的信息
-- -v，显示详细的命令执行过程信息
-```bash
-gcc [options] [filenames]
-```
+
+
 
 ![alt text](image/image1.png)
 

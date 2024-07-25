@@ -1,7 +1,7 @@
 # 摘要
 
 * [RISC系列](1_RISC-V/README.md)
-    * [RISC-V ISA](1_RISC-V/01_ISA.md)
+    * [RISC-V's ISA](1_RISC-V/00_ISA.md)
     * [Compile & Link](1_RISC-V/02_Compile.md)
     * [嵌入式扫盲](1_RISC-V/3.md)
 
