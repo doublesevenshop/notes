@@ -104,6 +104,10 @@ In addition to these, there are many options related to warnings:
 | `-Wno-implicit` | Do not show warnings for implicit declarations | 
 
 
+Now we can compile a slightly larger C project from scratch.
+
+
+
 ### 1.3. GDB
 
 

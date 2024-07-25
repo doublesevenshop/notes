@@ -12,3 +12,13 @@
 | 代码仓库 | XiangShan's Github                 | [XiangShan's Github](https://github.com/OpenXiangShan/XiangShan)                       | 开源高性能RISC-V处理器   |
 | 代码仓库 & 文章|RISC-V's GPU | [RISC-V's GPU](https://www.eet-china.com/mp/a304256.html) |[vorex](https://github.com/vortexgpgpu/vortex) |
 | 代码仓库 & 文章| RVGPU | [博客](https://blog.csdn.net/u014756627/article/details/133792944) | [rvgpu仓库](https://gitee.com/rvgpu) |
+
+
+Semico Research 预测
+Counterpoint 预测
+
+![alt text](image.png)
+
+![alt text](image-1.png)
+
+![alt text](image-2.png)
