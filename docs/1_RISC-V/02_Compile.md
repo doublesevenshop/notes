@@ -49,26 +49,39 @@ In fact, GCC has performed four steps：
   <img src="./image/image1_1.png" alt="alt text" />
 </p>
 
-| Tools | Function |
-| --- | --- |
-| GCC |  |
-|  |  |
-|  |  |
-|  |  |
-|  |  |
+This table includes some of the most commonly used tools in the GNU Compiler Collection suite, along with their primary functions.
+
+| **Tool** | **Name** | **Function** |
+|---|---|---|
+| `gcc`    | GNU Compiler Collection | Compiles C, C++, and other languages into executable binaries.                             |
+| `g++`    | GNU C++ Compiler  | Specifically compiles C++ programs.                                                          |
+| `gdb`    | GNU Debugger      | Debugs programs by allowing the inspection and control of program execution.                 |
+| `make`   | Make              | Automates the build process by reading a file called Makefile which specifies how to build the program. |
+| `as`     | GNU Assembler     | Assembles assembly language source code into machine code.                                   |
+| `ld`     | GNU Linker        | Links compiled object files into a single executable or library.                             |
+| `ar`     | GNU Archiver      | Creates, modifies, and extracts from archives (collections of files) typically used for libraries. |
+| `nm`     | Name List         | Lists symbols from object files, providing information about the contents of binaries.       |
+| `objdump`| Object Dump       | Displays information about object files, such as disassembled code, symbols, and sections.   |
+| `strip`  | Strip             | Removes symbols and other information from object files to reduce their size.                |
+
+GCC is the front-end program for compilation, it is achieved by calling other programs to compile the program source files into target files. 
+
+When compiling it first calls the `preprocessor program (cpp)` to process the input source program; then calls `cc1` to compile the preprocessed program into assembly code; and finally compiles the assembly code into target code by `as`.
 
 
-### GCC的命令格式
-GCC 常用的选项有-E、-c、-S、-o、-g、-v等等
-- -E，用来做预处理
-- -c，只编译不链接，生成目标文件"-o"
-- -S, 生成汇编代码
-- -o file，把输出文件指定到文件名中
-- -g，在输出文件中加入支持调试的信息
-- -v，显示详细的命令执行过程信息
+Command format is as follows:
 ```bash
-gcc [options] [filenames]
+gcc [options] file......
 ```
+The command gcc is followed by one or more options separated by spaces, and then by one or more target files.
+
+such as:
+```bash
+gcc -g -c -o hello.o hello.c
+```
+
+
+
 
 
 ## 2. ELF & Bin
