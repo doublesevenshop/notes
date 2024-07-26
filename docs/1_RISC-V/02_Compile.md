@@ -168,28 +168,39 @@ n
 s
 
 # print -> p: Displaying variable values
-print i
+p i
 
 
 # continue -> c: Continue program execution until the next breakpoint
 c
 
+# set var name=value 
+set var str1="Hello"
+set var num2=30
+
+
 
 # quit -> q: Exit the gdb environment
 q
+
+
 ```
 
 
 
 
+#### 2. Debugging core files
 
 
-#### 2. 调试core文件
+
 
 #### 3. 调试正在运行中的程序
 
 
+
 #### 4. 调试多进程服务程序
+
+
 
 #### 5. 调试多线程服务程序
 
