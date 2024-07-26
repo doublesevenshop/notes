@@ -110,18 +110,116 @@ Now we can compile a slightly larger C project from scratch.
 
 ### 1.3. GDB
 
+#### 1. Common Commands
+Before using GDB, let's check whether it is currently installed, and its installed version.
+```bash
+riscv@riscv-virtual-machine:~/Desktop/test$ gdb -v
+GNU gdb (Ubuntu 12.1-0ubuntu1~22.04.2) 12.1
+Copyright (C) 2022 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+
+```
+If not already installed, use the command: `sudo apt install gdb`
+
+After successful installation, we can happily debug! 
+
+
+However, when compiling a program with gcc, the compiled executable will not contain the source program code. If you want the compiled program to be debuggable, you need to add the `-g` parameter to the compiler.
+
+Suppose we now have this code below:
+```c
+// hello.c
+#include <stdio.h>
+
+int main(int argc, char* argv[]) {
+  if(argc != 2) {
+    return 0;
+  }
+  printf("arg is %s\n", argv[1]);
+
+  for(int i = 0; i < 10; i++) {
+    printf("Current number is %d\n", i);
+  }
+
+  return 0;
+}
+```
+
+Let's explore the various debugging strategies of gdb！
+```bash
+# set args xxx...: Setting the parameters of the main program
+gcc -g hello.c -o hello
+gdb hello
+set args byebye
+
+# break -> b: Setting breakpoints
+b 20  # Indicates a breakpoint at line 20
+
+
+# run -> r: Running the program to the first breakpoint
+r
+
+# next -> n: Executing the current statement, if the statement is a function call, it will not go to the function execution.
+n
+
+# step -> s: Executing the current statement, if the statement is a function call, then enter the function to execute the first statement in it.
+s
+
+# print -> p: Displaying variable values
+print i
+
+
+# continue -> c: Continue program execution until the next breakpoint
+c
+
+
+# quit -> q: Exit the gdb environment
+q
+```
+
+
+
+
+
+
+#### 2. 调试core文件
+
+#### 3. 调试正在运行中的程序
+
+
+#### 4. 调试多进程服务程序
+
+#### 5. 调试多线程服务程序
+
+
+#### 6. 服务程序运行日志
+
+
+
+
+
 
 
 ## 2. ELF & Bin
 
 
+
+
 ## 3. Make
+
+
 
 
 ## 4. Cross Compile
 
 
+
+
 ## 5. QEMU
+
+
 
 
 
