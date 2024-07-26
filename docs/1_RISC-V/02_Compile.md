@@ -257,8 +257,8 @@ We can see that `core file size` is 0. So when a core dump occurs, it does not g
 
 **Step1:** Lets the system generate core files in case of errors caused by signaling interrupts
 ```bash
-ulimit -c unlimited // set core size is infinite
-ulimit unlimited    // set file size is infinite
+ulimit -c unlimited # set core size is infinite
+ulimit unlimited    # set file size is infinite
 ```
 
 
