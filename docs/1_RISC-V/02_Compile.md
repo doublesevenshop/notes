@@ -187,11 +187,100 @@ q
 ```
 
 
-
-
 #### 2. Debugging core files
+- **core means: memory**
+- **dump means: throw out, pile out.**
+
+When developing and using linux programs, sometimes the program is somehow down, but there is no hint (sometimes there is a hint of core dumped).
+
+At this time, you can check whether there is a file generated in the form of: core, this file is the operating system to the program down when the contents of the memory thrown out of the generation, it can be used as a reference for debugging the program.
+
+**Sometimes the program goes down, but the core file is not generated.**
+
+The first thing is to know where the error occurred. Linux can generate a core file, and with `gdb` you can solve this problem.
+
+The generation of core files is related to your current system environment settings, you can use the following statement to set up, and then run the program to generate the core file.
+
+We can write a simple program to show this situation:
+```c
+#include <stdio.h>
+
+void B(int b) {
+    int*p = 0;
+    *p = b;
+}
+
+void A(int a) {
+    B(a);
+}
+
+int main() {
+
+    int a = 10;
+    A(a);
 
 
+    return 0;
+}
+```
+
+This code has a very obvious error at the location where the pointer is accessed. When we compile and run this code, it will report an error:
+```bash
+riscv@riscv-virtual-machine:~/Desktop/test$ gcc -g test1.c -o test1
+riscv@riscv-virtual-machine:~/Desktop/test$ ./test1
+Segmentation fault (core dumped)
+```
+
+Firstly, we can use `ulimit -a` to check out.
+```bash
+riscv@riscv-virtual-machine:~/Desktop/test$ ulimit -a
+real-time non-blocking time  (microseconds, -R) unlimited
+core file size              (blocks, -c) 0
+data seg size               (kbytes, -d) unlimited
+scheduling priority                 (-e) 0
+file size                   (blocks, -f) unlimited
+pending signals                     (-i) 63492
+max locked memory           (kbytes, -l) 2041424
+max memory size             (kbytes, -m) unlimited
+open files                          (-n) 1024
+pipe size                (512 bytes, -p) 8
+POSIX message queues         (bytes, -q) 819200
+real-time priority                  (-r) 0
+stack size                  (kbytes, -s) 8192
+cpu time                   (seconds, -t) unlimited
+max user processes                  (-u) 63492
+virtual memory              (kbytes, -v) unlimited
+file locks                          (-x) unlimited
+
+```
+We can see that `core file size` is 0. So when a core dump occurs, it does not generate the file.
+
+**Step1:** Lets the system generate core files in case of errors caused by signaling interrupts
+```bash
+ulimit -c unlimited // set core size is infinite
+ulimit unlimited    // set file size is infinite
+```
+
+
+**Step2:** Compile the original program
+```bash
+gcc -g test1.c -o test1
+```
+
+**Step3:** Run the compiled program ans `ls`
+```bash
+./test1 
+gdb test1 core
+```
+we can see the result
+<p align="center">
+  <img src="./image/image1_2.png" alt="alt text" />
+</p>
+
+Typing `bt` or `where` will bring up the location of the error, which will show you which line the program DOWN.
+<p align="center">
+  <img src="./image/image1_3.png" alt="alt text" />
+</p>
 
 
 #### 3. 调试正在运行中的程序
