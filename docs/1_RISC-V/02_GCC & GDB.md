@@ -1,12 +1,13 @@
-# Compile and Link
+# GCC & GDB
 **It's about xxxx words, if there are any errors or problems, email me! 1416642324@bupt.edu.cn**
 
 > Hello everyone, have a nice day! 
 > Let's study together. 
 
-## 1. GCC & GDB
 
-### 1.1. GCC
+## 1. GCC
+
+### 1.1. Introduction
 **GCC (GNU Compiler Collection)** is a suite of compilers developed by GNU under the GPL license. It supports front-ends in C/C++/Objective-C, Ada, and Go languages, and has been ported to a variety of computer architectures, such as X86, ARM, RISC-V, and so on.
 
 Now, let's look at the gcc version of the system first！
@@ -108,9 +109,9 @@ Now we can compile a slightly larger C project from scratch.
 
 
 
-### 1.3. GDB
+## 2. GDB
 
-#### 1. Common Commands
+### 2.1. Common Commands
 Before using GDB, let's check whether it is currently installed, and its installed version.
 ```bash
 riscv@riscv-virtual-machine:~/Desktop/test$ gdb -v
@@ -187,7 +188,7 @@ q
 ```
 
 
-#### 2. Debugging core files
+### 2.2. Debugging core files
 - **core means: memory**
 - **dump means: throw out, pile out.**
 
@@ -283,7 +284,7 @@ Typing `bt` or `where` will bring up the location of the error, which will show 
 </p>
 
 
-#### 3. Debugging a Running Program
+### 2.3. Debugging a Running Program
 We can start by writing a program that takes a long time to run:
 ```c
 #include<stdio.h>
@@ -330,7 +331,7 @@ sudo gdb test -p 2822
 Once attached, you can use the same `gdb` commands(b, r, c, ...) to debug your program.
 
 
-#### 4. Debugging multi-process service programs
+### 2.4. Debugging multi-process service programs
 As before, let's write a multi-process demo first.
 
 ```c
@@ -367,7 +368,7 @@ int main() {
 	return 0;
 }
 ```
-
+1. Compile the Program
 set follow-fork-mode parent
 set follow-fork-mode child
 
@@ -381,9 +382,8 @@ set detach-on-fork on/off 缺省是on
 
 
 
-#### 5. Debugging multi-threaded service programs
+### 2.5. Debugging multi-threaded service programs
 ```c
-
 #include<stdio.h>
 #include<unistd.h>
 #include<pthread.h>
@@ -393,9 +393,6 @@ int x = 0, y = 0;
 pthread_t ptid1, ptid2;
 void *pth1_main(void *arg);
 void *pth2_main(void* arg);
-
-
-
 
 int main() {
 	if(pthread_create(&ptid1, NULL, pth1_main, (void*)0) != 0) {
@@ -415,8 +412,6 @@ int main() {
 	pthread_join(ptid2, NULL);
 
 	printf("33333333333333\n");
-
-
 
 	return 0;
 }
@@ -439,10 +434,30 @@ void *pth2_main(void* arg) {
 ```
 查看线程的命令
 
+```bash
+ps aux | grep test
+(base) xyw@VM-8-13-ubuntu:~/process/firstbook$ ps -aux | grep test
+xyw      1293260  0.0  0.0   6876   956 pts/9    Sl+  15:56   0:00 ./test
+xyw      1293356  0.0  0.0   6608  2212 pts/4    R+   15:56   0:00 grep --color=auto test
+
+# 轻量级的线程
+ps -aL | grep test
+1293260 1293260 pts/9    00:00:00 test
+1293260 1293261 pts/9    00:00:00 test
+1293260 1293262 pts/9    00:00:00 test
+
+# 看到线程的关系
+pstree -p 主线程id
+test(1293260)─┬─{test}(1293261)
+              └─{test}(1293262)
+```
+thread pthid
 
 
+set scheduler-locking on/off 只运行当前线程，把剩下的挂起来
 
-
+指定某线程执行某gdb命令
+thread apply 2 n
 
 
 ## 2. ELF & Bin
