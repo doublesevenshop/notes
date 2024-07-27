@@ -14,3 +14,5 @@ NPU引入了新的攻击面
 CAGE：为Arm CCA集成GPU扩展
 
 HyperEnclave
+
+PMU  PUF

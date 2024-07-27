@@ -283,18 +283,56 @@ Typing `bt` or `where` will bring up the location of the error, which will show 
 </p>
 
 
-#### 3. 调试正在运行中的程序
+#### 3. Debugging a Running Program
+We can start by writing a program that takes a long time to run:
+```c
+#include<stdio.h>
+#include<string.h>
+#include<time.h>
+int bb(int num) {
+	int i = 0;
+	for(; i < 100000; i++) {
+		sleep(1);
+		printf("i=%d\n",i);
+	}
+}
+
+int aa(int num) {
+	bb(num);
+}
+
+
+int main() {
+	aa(1);
+	return 0;
+
+}
+```
+1. Run this program
+```bash
+gcc -g test.c -o test
+```
+
+2. Find the PID
+Find the PID of your running program using commands like `ps`,`top`,or`pgrep`
+```bash
+riscv@riscv-virtual-machine:~/Desktop/test$ pgrep test
+2822
+```
+
+3. Attach `gdb` to the Running Process
+If we directly use `gdb test -p 2822` to attach, it is not permitted. So, use `sudo` to update your Permission.
 
 
 
-#### 4. 调试多进程服务程序
+
+
+#### 4. Debugging multi-process service programs
 
 
 
-#### 5. 调试多线程服务程序
+#### 5. Debugging multi-threaded service programs
 
-
-#### 6. 服务程序运行日志
 
 
 
