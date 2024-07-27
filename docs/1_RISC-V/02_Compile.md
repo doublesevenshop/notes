@@ -322,12 +322,62 @@ riscv@riscv-virtual-machine:~/Desktop/test$ pgrep test
 
 3. Attach `gdb` to the Running Process
 If we directly use `gdb test -p 2822` to attach, it is not permitted. So, use `sudo` to update your Permission.
+```bash
+sudo gdb test -p 2822
+```
 
-
-
+4. Proceed with Debugging
+Once attached, you can use the same `gdb` commands(b, r, c, ...) to debug your program.
 
 
 #### 4. Debugging multi-process service programs
+As before, let's write a multi-process demo first.
+
+```c
+
+#include<stdio.h>
+#include<string.h>
+#include<stdlib.h>
+#include<unistd.h>
+
+
+int main() {
+	printf("Begin!\n");
+
+	if(fork() != 0) {
+		printf("I'm parent, pid=%d, ppid=%d\n", getpid(), getppid());
+
+		for(int i = 0; i < 10; i++) {
+			printf("parent's i = %d\n", i);
+			sleep(1);
+		}
+		exit(0);
+	}
+	else {
+		printf("I'm child, pid=%d, ppid=%d\n", getpid(), getppid());
+
+		for(int j = 0; j < 10; j++) {
+			printf("child's j = %d\n", j);
+			sleep(1);
+		}
+		exit(0);
+	}
+
+
+	return 0;
+}
+```
+
+set follow-fork-mode parent
+set follow-fork-mode child
+
+
+set detach-on-fork on/off 缺省是on
+
+查看调试的进程：info inferiors
+
+切换当前调试的进程 inferior 进程id
+
 
 
 
