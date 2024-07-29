@@ -2,8 +2,8 @@
 
 * [RISC系列](1_RISC-V/README.md)
     * [RISC-V's ISA](1_RISC-V/00_ISA.md)
-    * [Compile & Link](1_RISC-V/02_GCC%20&%20GDB.md)
-    * [Compile Toolchain](1_RISC-V/03_Compilation%20Toolchain.md)
+    * [Compile & Link](1_RISC-V/01_GCC&GDB.md)
+    * [Compile Toolchain](1_RISC-V/02_Toolchain.md)
 
 
 
