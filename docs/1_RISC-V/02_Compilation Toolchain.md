@@ -33,7 +33,7 @@ There are a lot of knowledge points in the Makefile part. If I explain it in det
 
 **Let us take action**
 The two most important concepts in Makefile are `target` and `dependency`.
-- Target refers to what we want make to do
+- Target refers to what we want make to do.
 - Dependency describes how to achieve what we want to to, that is how to do it. 
 
 The ultimate goal of mastering Makefile is that we can use targets and dependencies to think about the problems that need to be solved. 
@@ -41,51 +41,50 @@ The ultimate goal of mastering Makefile is that we can use targets and dependenc
 **Docs**
 - [驾驭Makefile](http://cicpi.ustc.edu.cn/indico/getFile.py/access?contribId=2&resId=0&materialId=slides&confId=839)
 - [廖雪峰学Makefile](https://liaoxuefeng.com/books/makefile/introduction/)
-- [阮一峰Makefile教程](https://www.ruanyifeng.com/blog/2015/02/make.html)(recommendation)
+- [阮一峰Makefile教程](https://www.ruanyifeng.com/blog/2015/02/make.html)
 
 
 
 **Video**
 - [为什么要用Makefile](https://www.bilibili.com/video/BV188411L7d2/?spm_id_from=333.337.search-card.all.click&vd_source=3edb456fe9b280bb4ab8f6e18448ace0)
-
+- [手把手学make](https://www.bilibili.com/video/BV1Bv4y1J7QT/?spm_id_from=333.337.search-card.all.click&vd_source=3edb456fe9b280bb4ab8f6e18448ace0)
 
 
 
 
 ## 4. Cross Compile
+> We must understand three words: Build, Host, Target.
+- **Build**: The computer that generates the compiler executable program
+- **Host**: The computer that runs he compiler executable program and compiles and links the application
+- **Target**: The computer that runs the application
 
+<p align="center">
+  <img src="./image/image2_2.png" alt="alt text" width="200" />
+</p>
+
+- **native compile**: Build == Host == Target
+- **cross compile**:  Build == Host != Target
+
+
+
+
+
+- 本地native编译：Build == Host == Target
+- 交叉cross编译：Build == Host != target
+
+<p align="center">
+  <img src="./image/image2_3.png" alt="alt text" width="300" />
+</p>
 
 
 
 ## 5. QEMU
-
-
-# 嵌入式开发的介绍
-## 什么是嵌入式开发
-嵌入式开发是一个比较综合性的技术，它不单指纯粹的软件技术开发，也不是一种硬件配置技术；它是在特定的硬件环境下针对某款硬件进行开发，是一种系统级别的与硬件结合比较紧密的软件开发技术。
-
-可能是通过路由器把PC和Target Board连起来。
-
-搞操作系统其实也是嵌入式开发的一种。
-
-
 ## 交叉编译
-- Build：生成编译器可执行程序的计算机
-- Host：运行编译器可执行程序，编译链接应用程序的计算机
-- Target：运行应用程序的计算机
 
-
-- 本地编译：Build == Host == Target
-- 交叉编译：Build == Host != target
 
 GNU交叉编译工具链Toolchain
 
 命名格式：arch-vendor-os1-[os2-]XXX 
-
-## 调试工具GDB
-GNU的Debug的缩写，用于查看另一个程序在执行过程中正在执行的操作，或者该程序崩溃时正在执行的操作。
-
-调试分为本地调试和远程调试，本地调试是我们用的最多一种调试方法，远程调试的话会使用到gdbserver来对目标机器进行调试。
 
 
 
