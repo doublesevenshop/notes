@@ -65,26 +65,25 @@ The ultimate goal of mastering Makefile is that we can use targets and dependenc
 - **native compile**: Build == Host == Target
 - **cross compile**:  Build == Host != Target
 
-
-
-
-
-- 本地native编译：Build == Host == Target
-- 交叉cross编译：Build == Host != target
-
 <p align="center">
   <img src="./image/image2_3.png" alt="alt text" width="300" />
 </p>
 
 
 
+
+If you want to learn more about cross-compilation, please check out the following documents：
+
+- [交叉编译是什么](https://worktile.com/kb/ask/54570.html)
+- [如何安装risc-v交叉编译链(有中科大打包好的)](https://soc.ustc.edu.cn/CECS/lab0/riscv/)
+- [手把手编译risc-v交叉编译链](https://www.riscv-mcu.com/article-show-id-404.html)
+- [交叉编译命名格式](https://blog.csdn.net/LEON1741/article/details/81537529)
+  
+
+
+
+
 ## 5. QEMU
-## 交叉编译
-
-
-GNU交叉编译工具链Toolchain
-
-命名格式：arch-vendor-os1-[os2-]XXX 
 
 
 
