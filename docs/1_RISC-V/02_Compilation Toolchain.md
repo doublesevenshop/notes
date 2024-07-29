@@ -17,7 +17,7 @@ There are 4 types of files in ELF format defined in the ELF standard:
 There is more information about ELF here, if you need it, please check it out.
 - [ELF File format](https://xinqiu.gitbooks.io/linux-inside-zh/content/Theory/linux-theory-2.html)
 - [Wiki](https://en.wikipedia.org/wiki/Executable_and_Linkable_Format)
-- 
+- [Tools for ELF file](https://www.gnu.org/software/binutils)
 
 
 ## 2. Bin
@@ -29,7 +29,17 @@ Bin(binary) file is a computer file format that represents the contents of a fil
 - **Bin**: is just like some paper which refer to a general binary file with no specific format requirements. It can contain any type of binary data, including but not limited to executable code, data file, etc. Bin file ij just a general reference to binary data, and ELF is a specific binary file format. 
 
 ## 3. Make
+There are a lot of knowledge points in the Makefile part. If I explain it in detail, it may take weeks. Therefore, I have compiled a lot of good tutorials for you. You can not only watch the videos, but also check the documents.
 
+**Let us take action**
+The two most important concepts in Makefile are `target` and `dependency`.
+- Target refers to what we want make to do
+- Dependency describes how to achieve what we want to to, that is how to do it. 
+
+The ultimate goal of mastering Makefile is that we can use targets and dependencies to think about the problems that need to be solved. 
+
+**Docs**
+- [驾驭Makefile](http://cicpi.ustc.edu.cn/indico/getFile.py/access?contribId=2&resId=0&materialId=slides&confId=839)
 
 
 
@@ -39,59 +49,6 @@ Bin(binary) file is a computer file format that represents the contents of a fil
 
 
 ## 5. QEMU
-
-
-
-
-
-
-
-
-
-
-
-
-![alt text](image/image1.png)
-
-
-### GCC执行步骤
-
-
-### GCC涉及的文件类型
-
-
-
-![alt text](image/image2.png)
-
-Program Header Table是一个运行视图，这个地方不是很懂，还是需要再查询一下
-
-
-下边是一个ELF文件处理的相关工具
-[Binutils](https://www.gnu.org/software/binutils)
-
-
-查看ELF的头信息，应该如何看呢？
-```bash
-readelf -h hello.o
-```
-
-这个可以查看一个.o文件的头
-
-那如何查看链接视图呢？
-```bash
-readelf -SW hello.o
-```
-这个就能看到整个文件有多少个节。
-
-
-那如何反汇编呢？
-先用
-```bash
-gcc -g -c hello.c 
-objdump -S hello.o
-```
-可以将hello.o进行反汇编，查看汇编代码，不过是有一内内痛苦的。
-
 
 
 # 嵌入式开发的介绍
