@@ -1,11 +1,32 @@
 # Compilation toolchain
 ## 1. ELF
+ELF(Executable and Linking Format) is a common binary file format on Linux platforms.
+
+There are 4 types of files in ELF format defined in the ELF standard:
+1. `.o file`: a relocatable file containing code and data, which can be linked into an executable file or a shared object file.
+2. `a.out file`: an executable file
+3. `.so file`: a shared object file
+4. `.core file`: a core dump file. When a process terminates unexpectedly, the system can save part of the process content and other status information at the time of termination to this file for analysis and debugging. 
+
+<p align="center">
+  <img src="./image/image2_1.png" alt="alt text" width="200" />
+</p>
+
+
+
+There is more information about ELF here, if you need it, please check it out.
+- [ELF File format](https://xinqiu.gitbooks.io/linux-inside-zh/content/Theory/linux-theory-2.html)
+- [Wiki](https://en.wikipedia.org/wiki/Executable_and_Linkable_Format)
+- 
 
 
 ## 2. Bin
+Bin(binary) file is a computer file format that represents the contents of a file in binary code. These files usually contain computer programs or data, such as software/firmware, operating systems, documents, images, audio, and video.
 
 
-
+### **What is the difference between Bin and ELF**
+- **ELF**: is just like a book which has a specific format, containing executable files, object code, shared libraries, etc. It provides a standardized structure so that the OS can load and run these files. ELF files contain structures such as headers, segments, and sections, and describe the code, data, dynamic link information, etc. 
+- **Bin**: is just like some paper which refer to a general binary file with no specific format requirements. It can contain any type of binary data, including but not limited to executable code, data file, etc. Bin file ij just a general reference to binary data, and ELF is a specific binary file format. 
 
 ## 3. Make
 
@@ -39,14 +60,7 @@
 ### GCC涉及的文件类型
 
 
-## ELF
-ELF(Executable Linkable Format)是一种Unix-like系统上的二进制文件格式标准。
 
-ELF标准中定义的采用ELF格式的文件有4类：
-1. .o文件：可重定位文件，包含了代码和数据，可以被链接成可执行文件或共享目标文件。
-2. a.out文件：可执行文件
-3. .so文件：共享目标文件
-4. core文件：核心转储文件，进程意外终止时，系统可以将该进程的部分内容和终止时的其他状态信息保存到该文件中以供分析调试。
 ![alt text](image/image2.png)
 
 Program Header Table是一个运行视图，这个地方不是很懂，还是需要再查询一下
