@@ -1,5 +1,5 @@
 # GCC & GDB
-**It's about xxxx words, if there are any errors or problems, email me! 1416642324@bupt.edu.cn**
+**If there are any errors or problems, email me! 1416642324@bupt.edu.cn**
 
 > Hello everyone, have a nice day! 
 > Let's study together. 

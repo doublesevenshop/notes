@@ -1,4 +1,7 @@
-# RISC-V汇编语言入门
+# Start with RISC-V Assembly Language
+**If there are any errors or problems, email me! 1416642324@bupt.edu.cn**
+
+
 ## 指令入门
 在学习汇编的过程中我们主要参考两套文档：
 - [RISC-V的非特权指令集]()
