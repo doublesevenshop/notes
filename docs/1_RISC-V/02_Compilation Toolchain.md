@@ -80,39 +80,12 @@ If you want to learn more about cross-compilation, please check out the followin
 - [交叉编译命名格式](https://blog.csdn.net/LEON1741/article/details/81537529)
   
 
-
-
-
 ## 5. QEMU
+[QEMU](https://www.qemu.org/)(Quick Emulation) is mainly used in Linux and has two main modes, `user mode` and `system mode`.
 
+Since the knowledge and content of QEMU are too vast, you can first master the usage and core concepts, and then slowly supplement them!
 
-
-## 模拟器QEMU
-那什么又是模拟器呢？
-我们主要用的模拟器是QEMU(Quick Emulation)。这个软件主要用在Linux下边，主要有两种模式，用户模式和系统模式。
-
-
-QEMU可以只开一个进程来运行。
-```bash
-qemu-riscv32 ./a.out
-```
-如果是用这种方式的话，QEMU模拟的是U模式
-
-System mode 模拟整个计算机系统，包括中央处理器及其他周边设备。
-
-如果做系统开发，则一般来说使用System mode。
-
-
-## 项目构造工具Make
-make工具是一种自动化工程管理工具。
-Makefile是配合make用于描述构建工程过程中所管理的对象以及如何构建工程。
-
-Makefile三要素：target、prerequisites、command
-
-关于如何速成Makefile，之后我也会写一个博客来简单讲解一下这个Makefile的规则。
-
-规则分为缺省规则和伪规则。
-
-
-
-除了学习这些之外，还得学习一些bash的语法。
+[QEMU KVM学习笔记](https://yifengyou.github.io/learn-kvm/)
+[ARM 版本QEMU搭建](https://wowothink.com/90fb723e/)
+[RISC-V版本QEMU搭建(待定)]()
+[QEMU 源码分析笔记](https://blog.51cto.com/AppleCai/7835439)
