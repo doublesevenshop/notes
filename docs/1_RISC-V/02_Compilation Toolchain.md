@@ -41,6 +41,13 @@ The ultimate goal of mastering Makefile is that we can use targets and dependenc
 **Docs**
 - [驾驭Makefile](http://cicpi.ustc.edu.cn/indico/getFile.py/access?contribId=2&resId=0&materialId=slides&confId=839)
 - [廖雪峰学Makefile](https://liaoxuefeng.com/books/makefile/introduction/)
+- [阮一峰Makefile教程](https://www.ruanyifeng.com/blog/2015/02/make.html)(recommendation)
+
+
+
+**Video**
+- [为什么要用Makefile](https://www.bilibili.com/video/BV188411L7d2/?spm_id_from=333.337.search-card.all.click&vd_source=3edb456fe9b280bb4ab8f6e18448ace0)
+
 
 
 
