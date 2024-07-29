@@ -369,20 +369,69 @@ int main() {
 }
 ```
 1. Compile the Program
-set follow-fork-mode parent
-set follow-fork-mode child
+```bash
+gcc -g -o test test.c
+```
+
+2. Start gdb
+```bash
+gdb ./test
+
+```
+
+3. Set GDB Options for Forking
+Inside GDB, set the mode for handling forked processes:
+```bash
+# This command tells GDB to continue debugging the parent process after a fork.
+(gdb) set follow-fork-mode parent 
 
 
-set detach-on-fork on/off 缺省是on
+# Alternatively, you can follow the child process:
+(gdb) set follow-fork-mode child
+```
 
-查看调试的进程：info inferiors
+You can also control whether GDB detaches from the child process on fork:
+```bash
+# By default, detach-on-fork is set to on, meaning GDB will detach from the child process.
+(gdb) set detach-on-fork on/off
+```
 
-切换当前调试的进程 inferior 进程id
+After set some break points, we can run the program inside GDB:
+```bash
+(gdb) r
+```
+4. Inspecting and Managing Processes
+To see the list of all processes(inferiors) that GDB is debugging:
+```bash
+(gdb) info inferiors
+```
 
+This will list the processes with their IDs and states.
+To switch the current process being debugged:
+```bash
+(gdb) inferior 2
+```
 
+5. Common GDB Commands for Debugging Multi-Process Programs
+- Setting Breakpoints
+```bash
+# Set a breakpoint at a specific line:
+(gdb) break <file>:<line>
 
+# Set a breakpoint at a specific function:
+(gdb) break <function>
+```
+
+- Continuing Execution:
+```bash
+#Continue running the program until the next breakpoint or end:
+(gdb) continue
+```
+
+This guide covers the basic commands and workflow for debugging multi-process programs in GDB. Hope these can help you!
 
 ### 2.5. Debugging multi-threaded service programs
+We can create a file named`test.c` with th following content:
 ```c
 #include<stdio.h>
 #include<unistd.h>
@@ -432,107 +481,62 @@ void *pth2_main(void* arg) {
 	pthread_exit(NULL);
 }
 ```
-查看线程的命令
+Then compile the program using gcc:
+```bash
+gcc -g -o test test.c -pthread
+```
+1. Start GDB
+Start gdb with the compiled program:`
+```bash
+gdb ./test
+```
 
+We can use the following commands to check out the pid and the pthread id.
 ```bash
 ps aux | grep test
 (base) xyw@VM-8-13-ubuntu:~/process/firstbook$ ps -aux | grep test
 xyw      1293260  0.0  0.0   6876   956 pts/9    Sl+  15:56   0:00 ./test
 xyw      1293356  0.0  0.0   6608  2212 pts/4    R+   15:56   0:00 grep --color=auto test
 
-# 轻量级的线程
+# Lightweight threads
 ps -aL | grep test
 1293260 1293260 pts/9    00:00:00 test
 1293260 1293261 pts/9    00:00:00 test
 1293260 1293262 pts/9    00:00:00 test
 
-# 看到线程的关系
+# Relationships between threads
 pstree -p 主线程id
 test(1293260)─┬─{test}(1293261)
               └─{test}(1293262)
 ```
-thread pthid
 
-
-set scheduler-locking on/off 只运行当前线程，把剩下的挂起来
-
-指定某线程执行某gdb命令
-thread apply 2 n
-
-
-## 2. ELF & Bin
-
-
-
-
-## 3. Make
-
-
-
-
-## 4. Cross Compile
-
-
-
-
-## 5. QEMU
-
-
-
-
-
-
-
-
-
-
-
-
-![alt text](image/image1.png)
-
-
-### GCC执行步骤
-
-
-### GCC涉及的文件类型
-
-
-## ELF
-ELF(Executable Linkable Format)是一种Unix-like系统上的二进制文件格式标准。
-
-ELF标准中定义的采用ELF格式的文件有4类：
-1. .o文件：可重定位文件，包含了代码和数据，可以被链接成可执行文件或共享目标文件。
-2. a.out文件：可执行文件
-3. .so文件：共享目标文件
-4. core文件：核心转储文件，进程意外终止时，系统可以将该进程的部分内容和终止时的其他状态信息保存到该文件中以供分析调试。
-![alt text](image/image2.png)
-
-Program Header Table是一个运行视图，这个地方不是很懂，还是需要再查询一下
-
-
-下边是一个ELF文件处理的相关工具
-[Binutils](https://www.gnu.org/software/binutils)
-
-
-查看ELF的头信息，应该如何看呢？
+2. Listing Threads
+To list all the threads:
 ```bash
-readelf -h hello.o
+(gdb) info threads
+```
+This will display the list of all threads with their IDs and states.
+
+3. Switching Between Threads
+To switch to a specific thread, we can use the following commands:
+```bash
+(gdb) thread 2
+```
+4. Applying Commands to Specific Threads
+To apply a command to a specific thread, use`thread apply`. For example, to execute `next` in thread 2:
+
+```bash
+(gdb) thread apply 2 next
 ```
 
-这个可以查看一个.o文件的头
-
-那如何查看链接视图呢？
+5. Locking the Scheduler
+To run only the current thread and suspend all other threads:
 ```bash
-readelf -SW hello.o
+(gdb) set scheduler-locking on
 ```
-这个就能看到整个文件有多少个节。
-
-
-那如何反汇编呢？
-先用
+To turn off scheduler locking and allow all threads to run:
 ```bash
-gcc -g -c hello.c 
-objdump -S hello.o
+(gdb) set scheduler-locking off
 ```
-可以将hello.o进行反汇编，查看汇编代码，不过是有一内内痛苦的。
+
 

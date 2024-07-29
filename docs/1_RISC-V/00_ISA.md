@@ -1,5 +1,5 @@
 # RISC-V ISA
-**It's about 2000 words, if there are any errors or problems, email me!**
+**It's about 2000 words, if there are any errors or problems, email me! 1416642324@bupt.edu.cn**
 
 - [RISC-V ISA](#risc-v-isa)
   - [1. Intro](#1-intro)
