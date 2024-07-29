@@ -2,8 +2,10 @@
 
 * [RISC系列](1_RISC-V/README.md)
     * [RISC-V's ISA](1_RISC-V/00_ISA.md)
-    * [Compile & Link](1_RISC-V/02_Compile.md)
-    * [嵌入式扫盲](1_RISC-V/3.md)
+    * [Compile & Link](1_RISC-V/02_GCC%20&%20GDB.md)
+    * [Compile Toolchain](1_RISC-V/03_Compilation%20Toolchain.md)
+
+
 
 * [RISC-V相关资料](2_ziliao/README.md)
 
