@@ -13,3 +13,5 @@ Chisel是伯克利在发明RISC-V的时候顺带产生的一个硬件描述语�
 
 可以将设计硬件转换为Verilog等低层次HDL描述
 
+
+1. [硬件描述语言和高级编程语言区别](https://chhzh123.github.io/blogs/2019-02-08-hll-and-hdl/)
