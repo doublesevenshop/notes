@@ -13,5 +13,6 @@ Chisel是伯克利在发明RISC-V的时候顺带产生的一个硬件描述语�
 
 可以将设计硬件转换为Verilog等低层次HDL描述
 
+Chisel本质实际上是“Verilog Generator”，具有高可配等优点，函数式编程并不是为了掩盖电路设计细节，相反，为了用Chisel写出更高效的语言，需要对数字电路设计更熟悉，同时还要熟悉scala语法。
 
 1. [硬件描述语言和高级编程语言区别](https://chhzh123.github.io/blogs/2019-02-08-hll-and-hdl/)
