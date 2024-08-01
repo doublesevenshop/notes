@@ -12,3 +12,6 @@ Parser combinator higher-order function
 把链式调用平铺展开
 
 scala
+
+HPDC很好的组会，看一下里边的内容
+houruitk，只有针对话的，实验都是朝着自己的方向。
