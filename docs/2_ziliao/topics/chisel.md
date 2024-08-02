@@ -7,4 +7,11 @@
 
 [Chisel 官网](https://www.chisel-lang.org/)
 
+[Start Chisel](https://zhuanlan.zhihu.com/p/98097268)
 
+[Chisel 官方文档](https://github.com/freechipsproject/chisel-bootcamp)
+
+
+[Chisel 中文官网](https://www.chiselchina.com/)
+
+[Chisel API](https://www.chisel-lang.org/api/)
