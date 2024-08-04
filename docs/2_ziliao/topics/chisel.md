@@ -12,3 +12,5 @@
 [Chisel 官方文档](https://github.com/freechipsproject/chisel-bootcamp)
 
 [Chisel API](https://www.chisel-lang.org/api/)
+
+[Chisel 知乎教程](https://www.zhihu.com/search?type=content&q=chisel%E6%95%99%E7%A8%8B)
