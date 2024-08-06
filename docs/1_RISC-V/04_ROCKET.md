@@ -102,11 +102,35 @@ TileLink 支持多种类型的通讯代理模块，并定义了三个从简单�
 
 其中也具体讲到了*TileLink协议*的硬件实现方式。
 
+### 5. RoCC
+RISC-V支持通过自定义指令的方式，支持自定义硬件加速器，用于专用领域的计算加速设计。
 
+RoCC便是一款处理器添加扩展的方案。
 
+RISC-V的ISA定义了四种自定义指令用于与协处理器进行交互。
 
-### 5. 仿真以及测试
+```asm
+customX rd, rs1, rs2, funct
+```
+标准自定义指令格式如下：
+<p align="center">
+    <img src="./image/04_4.png" alt="标准自定义指令格式">
+</p>
+其中rs1, rs2为源寄存器，rd为目的寄存器，xd,xs1,xs2为寄存器有效位，分别指令rd,rs1,rs2是否已经使用。
 
+opcode为四种不同的custom指令。
+
+RoCC接口由多组不同的Wire和Bundle组成，如下图所示：
+<p align="center">
+    <img src="./image/04_5.png" alt="RoCC接口样式">
+</p>
+
+其中cmd包含两个源寄存器的内容和整条指令内容。resp包含目的寄存器。cmd和resp均为Decoupled接口。
+
+Decoupled接口是一种基于FIFO，类似ready/valid协议，请求方（core A）准备好data信号并拉高valid线，等待core B相应ready信号线的拉高，如果Core B可以立即响应，则可以在同一周期内拉高信号。
+<p align="center">
+    <img src="./image/04_6.png" alt="Decoupled接口示例">
+</p>
 
 # 2. Rocket处理器
 ### 1. 标量处理器 Rocket
