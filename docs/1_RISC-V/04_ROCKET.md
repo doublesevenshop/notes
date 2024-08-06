@@ -132,7 +132,7 @@ Decoupled接口是一种基于FIFO，类似ready/valid协议，请求方（core 
     <img src="./image/04_6.png" alt="Decoupled接口示例">
 </p>
 
-# 2. Rocket处理器
+## 2. Rocket处理器
 ### 1. 标量处理器 Rocket
 
 
