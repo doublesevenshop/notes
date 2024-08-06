@@ -2,6 +2,8 @@
 **If there are any errors or problems, email me! 1416642324@bupt.edu.cn**
 
 
+脑子正常了，还是用中文吧...
+
 
 
 ## 指令入门

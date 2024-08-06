@@ -5,7 +5,7 @@
     * [Compile & Link](1_RISC-V/01_GCC&GDB.md)
     * [Compile Toolchain](1_RISC-V/02_Toolchain.md)
     * [Basic Instruction](1_RISC-V/03_BasicInstruction.md)
-    * 
+    * [ROCKET](1_RISC-V/04_ROCKET.md)
 
 
 
