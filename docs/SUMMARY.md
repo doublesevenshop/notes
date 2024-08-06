@@ -4,7 +4,7 @@
     * [RISC-V's ISA](1_RISC-V/00_ISA.md)
     * [Compile & Link](1_RISC-V/01_GCC&GDB.md)
     * [Compile Toolchain](1_RISC-V/02_Toolchain.md)
-    * [BasicInstruction](1_RISC-V/03_BasicInstruction.md)
+    * [Basic Instruction](1_RISC-V/03_BasicInstruction.md)
     * 
 
 
