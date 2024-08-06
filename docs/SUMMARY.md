@@ -19,4 +19,4 @@
 * [Chisel系列](4_Chisel/README.md)
     * [Chisel环境安装](4_Chisel/1.md)
     * [Scala快速学习](4_Chisel/2.md)
-    
+    * [Hello Chisel](4_Chisel/3.md)
