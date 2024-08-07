@@ -10,6 +10,10 @@ Chisel可以生成可以综合的Verilog代码，具体关于Chisel的学习可�
 
 为了将Chisel转变成Verilog，语言开发人员开发了一套中间标准交换格式——FIRRTL，它和Verilog是同一个级别的，两者都比Chisel低一级。编写的Chisel代码首先会经过FIRRTL编译器，生成FIRRTL代码，也就是一个后缀格式为".fir"的文件，然后由这个FIRRTL文件再去生成对应的Verilog代码。FIRRTL生成的格式和Verilog格式很接近，只不过是由机器生成的、很死板的代码，并且FIRRTL编译器也并不是只针对Chisel。
 
+chisel开发流程如下：
+<p align="center">
+    <img src="./image/04_7.png" alt="Chisel开发流程">
+</p>
 ### 2. Rocket-Chip基本结构
 Rocket Chip架构中最核心的组成部分是Rocket核心。主要包括几个部分：
 - Rocket核心
