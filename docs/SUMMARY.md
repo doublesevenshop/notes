@@ -22,3 +22,6 @@
     * [Chisel环境安装](4_Chisel/1.md)
     * [Scala快速学习](4_Chisel/2.md)
     * [Hello Chisel](4_Chisel/3.md)
+
+* [Leetcode刷题系列](6_Leetcode/README.md)
+    
